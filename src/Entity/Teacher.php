@@ -35,6 +35,11 @@ class Teacher
     #[ORM\JoinColumn(nullable: false)]
     private ?Matiere $matiere = null;
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

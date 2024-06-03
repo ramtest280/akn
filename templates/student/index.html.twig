@@ -3,7 +3,35 @@
 {% block title %}Hello StudentController!{% endblock %}
 
 {% block body %}
-    {{ form_start(form)}}
-        {{ form_widget(form) }}
-    {{ form_end(form) }}
+{% include 'partials/navbar.html.twig' %}
+
+    <div class="container w-50 p-20">
+    <h1 class="text-center">ENREGISTREMENT DES ELEVES</h1>
+        {{ form_start(form)}}
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_label(form.name)}}
+                {{ form_widget(form.name) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_label(form.nickname)}}
+                {{ form_widget(form.nickname) }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_label(form.birth)}}
+                {{ form_widget(form.birth) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_label(form.adress)}}
+                {{ form_widget(form.adress) }}
+            </div>
+        </div>
+        
+            
+        {{ form_end(form) }}
+    </div>
+    
 {% endblock %}
