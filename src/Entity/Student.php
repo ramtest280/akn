@@ -35,9 +35,16 @@ class Student
     #[ORM\Column(length: 255)]
     private ?string $avatar = null;
 
-    #[ORM\OneToOne(cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(cascade: ['persist', 'remove'], inversedBy:'student')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Classe $classe = null;
+
+    public function __toString(): string
+    {
+        return sprintf( 
+            '%s',
+            $this->birth->format('d-m-Y '));
+    }
 
     public function getId(): ?int
     {

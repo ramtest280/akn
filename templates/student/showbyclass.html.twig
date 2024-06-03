@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Afficher les eleves en classe {{ classe.name}}
+{% endblock %}
+
+{% block body %}
+    {% include 'partials/navbar.html.twig' %}
+
+    <div class="container">
+        <h1>Liste des eleves en classe de {{ classe.name }}</h1>
+        <table class="table table-stripped">
+            
+            <thead>
+                <tr>
+                {# <th scope="col">#</th> #}
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                <th scope="col">Date de naissance</th>
+                <th scope="col">Adresse</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                {% for student in students %}
+                <tr>
+                    {# <th scope="row">{{student.id}}</th> #}
+                    <td>{{student.name}}</td>
+                    <td>{{student.nickname}}</td>
+                    <td>{{student.birth | date('d-m-Y')}}</td>
+                    <td>{{student.adress}}</td>
+                </tr>
+                {% endfor %}
+                    
+            </tbody>
+      
+        </table>
+        
+    </div>
+    
+{% endblock %}

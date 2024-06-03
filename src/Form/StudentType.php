@@ -61,7 +61,6 @@ class StudentType extends AbstractType
                 ]
             ])
             ->add('classe', EntityType::class, [
-                
                 'class' => Classe::class,
                 'attr' => [
                     'class' => 'form-control mb-2'
