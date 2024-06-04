@@ -39,6 +39,8 @@ class Student
     #[ORM\JoinColumn(nullable: false)]
     private ?Classe $classe = null;
 
+
+
     public function __toString(): string
     {
         return sprintf( 
@@ -146,4 +148,7 @@ class Student
 
         return $this;
     }
+
+
+    
 }

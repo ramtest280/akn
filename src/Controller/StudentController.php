@@ -34,12 +34,5 @@ class StudentController extends AbstractController
         ]);
     }
 
-    #[Route('/class/{name}/students', name: 'class_students')]
-    public function showbyclass(Classe $classe): Response
-    {
-        return $this->render('student/showbyclass.html.twig',[
-            'classe' => $classe,
-            'students' => $classe->getStudents()
-        ]);
-    }
+    
 }
